@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/css/home/home.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/member/sign_up_form.css">
+    <%- include('../include/title.ejs')%>
+
+    <script src="/js/member/modify_form.js"></script>
+</head>
+<body>
+    <%- include('../include/header.ejs')%>
+     <%- include('../include/nav.ejs')%>
+    <article>
+        <div class="article_wrap">
+            <div class="title">
+                <h4>Modify Form</h4>
+            </div>
+            <div class="content">
+                <form action="/member/modify_confirm" 
+                    method="post" 
+                    name="modify_form">
+
+                    <input type="hidden" value="<%= memberData.m_no %>" name="m_no">
+
+                    <input type="text" name="m_id" readonly disabled value="<%= memberData.m_id %>"><br>
+                    <input type="password" name="m_pw" readonly disabled value="******"><br>
+                    <input type="text" name="m_mail" value="<%= memberData.m_mail %>"><br>
+                    <input type="text" name="m_phone" value="<%= memberData.m_phone %>"><br>
+
+                    <input type="button" value="confirm" onclick="modifyForm();">
+                    <input type="reset" value="Reset">
+
+                 </form>
+            </div>
+        </div>
+    </article>
+
+    <%- include('../include/footer.ejs')%>
+    
+</body>
+</html>

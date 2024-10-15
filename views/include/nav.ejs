@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/css/include/nav.css">
+<nav>
+    <div class="nav_wrap">
+        <a href="/">home</a> &nbsp;
+        <% if (loginedMemberID === undefined) { %>
+            <a href="/member/signup_form">signUp</a>&nbsp;
+            <a href="/member/signin_form">signIn</a>&nbsp;
+        <% } else { %>
+            <a href="/member/signout_confirm">signout</a>&nbsp;
+            <a href="/member/modify_form">modify</a>&nbsp;
+            <a href="/member/delete_confirm">delete</a>&nbsp; 
+        <% } %>
+    </div>
+</nav>
+
